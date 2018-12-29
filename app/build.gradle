@@ -40,5 +40,6 @@ dependencies {
     // greendao
     api "org.greenrobot:greendao:${GREENDAO_VERSION}"
     api project(':common')
+    api project(':lib-zxing')
 
 }

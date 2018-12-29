@@ -1,6 +1,7 @@
 package com.example.pl.testhello.base;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -22,7 +23,7 @@ public abstract class BaseFragment extends Fragment {
     private Unbinder mUnBinder;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mView = inflater.inflate(getLayout(), container, false);
         mUnBinder = ButterKnife.bind(this, mView);

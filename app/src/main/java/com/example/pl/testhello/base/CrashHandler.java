@@ -1,5 +1,6 @@
 package com.example.pl.testhello.base;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Environment;
 import android.os.Looper;
@@ -29,6 +30,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
     // 系统默认的UncaughtException处理类
     private UncaughtExceptionHandler mDefaultHandler;
     // CrashHandler实例
+    @SuppressLint("StaticFieldLeak")
     private static CrashHandler instance;
     // 程序的Context对象
     private Context mContext;
@@ -121,7 +123,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
         for (Map.Entry<String, String> entry : infos.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
-            sb.append(key + "=" + value + "\n");
+            sb.append(key).append("=").append(value).append("\n");
         }
         Writer writer = new StringWriter();
         PrintWriter printWriter = new PrintWriter(writer);

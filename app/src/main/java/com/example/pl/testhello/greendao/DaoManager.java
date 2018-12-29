@@ -1,5 +1,6 @@
 package com.example.pl.testhello.greendao;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 /**
@@ -13,10 +14,12 @@ public class DaoManager {
     //初始化上下文
     private Context context;
     //多线程中要被共享的使用volatile关键字修饰  GreenDao管理类
+    @SuppressLint("StaticFieldLeak")
     private volatile static DaoManager mInstance;
     //它里边实际上是保存数据库的对象
     private static DaoMaster mDaoMaster;
     //创建数据库的工具
+    @SuppressLint("StaticFieldLeak")
     private static MySQLiteOpenHelper mHelper;
     //管理gen里生成的所有的Dao对象里边带有基本的增删改查的方法
     private static DaoSession mDaoSession;

@@ -4,6 +4,7 @@ import android.app.Application;
 import com.example.network.network.CibNetworkApp;
 import com.example.pl.testhello.base.BaseApplication;
 import com.example.pl.testhello.base.CrashHandler;
+import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 
 /**
@@ -30,6 +31,9 @@ public class MainApp extends BaseApplication {
         CrashHandler crashHandler = CrashHandler.getInstance();
         // 注册crashHandler
         crashHandler.init(getApplicationContext());
+
+        //zxing初始化
+        ZXingLibrary.initDisplayOpinion(this);
     }
 
 }

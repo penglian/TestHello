@@ -59,4 +59,9 @@
         android:id="@+id/querybuilder"
         android:text="querybuilder查询"
         />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

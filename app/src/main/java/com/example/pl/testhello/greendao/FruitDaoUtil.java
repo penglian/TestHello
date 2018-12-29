@@ -28,7 +28,7 @@ public class FruitDaoUtil {
      */
     public boolean insertFruit(Fruit fruit) {
         boolean flag = false;
-        flag = mManager.getDaoSession().getFruitDao().insertOrReplace(fruit) == -1 ? false : true;
+        flag = mManager.getDaoSession().getFruitDao().insertOrReplace(fruit) != -1;
         Log.i(TAG, "-------插入一条的结果为"+flag);
         return flag;
     }
@@ -56,12 +56,11 @@ public class FruitDaoUtil {
     }
 
     /**
-     *   刷新指定数据
+     *  刷新指定数据
      */
     public boolean reFreshFruit(Fruit fruit){
-        boolean flag = false;
         mManager.getDaoSession().refresh(fruit);
-        return flag;
+        return true;
     }
     /**
      * 修改一条数据
